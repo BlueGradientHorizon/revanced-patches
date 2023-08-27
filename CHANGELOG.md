@@ -1,3 +1,10 @@
+# [2.188.0-dev.5](https://github.com/BlueGradientHorizon/revanced-patches/compare/v2.188.0-dev.4...v2.188.0-dev.5) (2023-08-27)
+
+
+### Bug Fixes
+
+* idk how to print anything ([9c6e398](https://github.com/BlueGradientHorizon/revanced-patches/commit/9c6e398e2606f998a1a2a243cde44a5c518c1201))
+
 # [2.188.0-dev.4](https://github.com/BlueGradientHorizon/revanced-patches/compare/v2.188.0-dev.3...v2.188.0-dev.4) (2023-08-27)
 
 
