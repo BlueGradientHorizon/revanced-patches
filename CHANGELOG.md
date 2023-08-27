@@ -1,3 +1,10 @@
+# [2.188.0-dev.2](https://github.com/BlueGradientHorizon/revanced-patches/compare/v2.188.0-dev.1...v2.188.0-dev.2) (2023-08-27)
+
+
+### Features
+
+* **YouTube:** CustomCDN patch, tests ([c079eaa](https://github.com/BlueGradientHorizon/revanced-patches/commit/c079eaae518a6a3d3ea059f5b9347c50bb4aa852))
+
 # [2.188.0-dev.1](https://github.com/BlueGradientHorizon/revanced-patches/compare/v2.187.0...v2.188.0-dev.1) (2023-08-27)
 
 
