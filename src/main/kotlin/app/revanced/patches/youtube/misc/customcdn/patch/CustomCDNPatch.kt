@@ -36,14 +36,14 @@ class CustomCDNPatch : BytecodePatch(
 //            ""
 //        )
 
-        var str: String = ""
-        CustomCDNFingerprint.result?.let {result ->
-            result.scanResult.stringsScanResult!!.matches.forEach { s ->
-                println("${s.index}: ${s.string}")
-                str = str.plus("${s.index}: ${s.string}")
-            }
-        } ?: return CustomCDNFingerprint.toErrorResult()
-
+//        var str: String = ""
+//        CustomCDNFingerprint.result?.let {result ->
+//            result.scanResult.stringsScanResult!!.matches.forEach { s ->
+//                println("${s.index}: ${s.string}")
+//                str = str.plus("${s.index}: ${s.string}")
+//            }
+//        } ?: return CustomCDNFingerprint.toErrorResult()
+        println("test")
         return PatchResultSuccess()
     }
 }
