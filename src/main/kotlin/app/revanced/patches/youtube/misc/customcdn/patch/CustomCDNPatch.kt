@@ -10,6 +10,7 @@ import app.revanced.patcher.data.toMethodWalker
 import app.revanced.patcher.extensions.InstructionExtensions.addInstructions
 import app.revanced.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.revanced.patcher.patch.PatchResult
+import app.revanced.patcher.patch.PatchResultError
 import app.revanced.patcher.patch.PatchResultSuccess
 import app.revanced.patcher.patch.annotations.Patch
 import app.revanced.patcher.util.proxy.mutableTypes.MutableMethod
@@ -35,11 +36,13 @@ class CustomCDNPatch : BytecodePatch(
 //            ""
 //        )
 
+        var str: String = ""
         CustomCDNFingerprint.result?.let {result ->
             result.scanResult.stringsScanResult!!.matches.forEach { s ->
-                println("${s.index}: ${s.string}")
+                //println("${s.index}: ${s.string}")
+                str = str.plus("${s.index}: ${s.string}\"")
             }
-        } ?: return CustomCDNFingerprint.toErrorResult()
+        } ?: return /*CustomCDNFingerprint.toErrorResult()*/PatchResultError(str)
 
         return PatchResultSuccess()
     }
