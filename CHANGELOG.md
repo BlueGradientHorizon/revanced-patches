@@ -1,3 +1,10 @@
+# [2.188.0-dev.9](https://github.com/BlueGradientHorizon/revanced-patches/compare/v2.188.0-dev.8...v2.188.0-dev.9) (2023-08-27)
+
+
+### Bug Fixes
+
+* test ([a137e62](https://github.com/BlueGradientHorizon/revanced-patches/commit/a137e62196712ffed8999bda871f1191c40f7108))
+
 # [2.188.0-dev.8](https://github.com/BlueGradientHorizon/revanced-patches/compare/v2.188.0-dev.7...v2.188.0-dev.8) (2023-08-27)
 
 
