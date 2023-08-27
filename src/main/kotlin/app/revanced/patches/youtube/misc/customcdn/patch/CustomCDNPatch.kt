@@ -42,8 +42,9 @@ class CustomCDNPatch : BytecodePatch(
                 //println("${s.index}: ${s.string}")
                 str = str.plus("${s.index}: ${s.string}\"")
             }
-        } ?: return /*CustomCDNFingerprint.toErrorResult()*/PatchResultError(str)
+        } ?: return CustomCDNFingerprint.toErrorResult()
 
-        return PatchResultSuccess()
+        //return PatchResultSuccess()
+        return PatchResultError(str)
     }
 }
