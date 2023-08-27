@@ -1,3 +1,10 @@
+# [2.188.0-dev.4](https://github.com/BlueGradientHorizon/revanced-patches/compare/v2.188.0-dev.3...v2.188.0-dev.4) (2023-08-27)
+
+
+### Bug Fixes
+
+* actually return error from CustomCDN patch to show output ([4c2ae52](https://github.com/BlueGradientHorizon/revanced-patches/commit/4c2ae523a13fddb5eab3c5c275ca7763bcf54dd3))
+
 # [2.188.0-dev.3](https://github.com/BlueGradientHorizon/revanced-patches/compare/v2.188.0-dev.2...v2.188.0-dev.3) (2023-08-27)
 
 
