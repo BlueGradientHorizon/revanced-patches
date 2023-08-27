@@ -8,6 +8,7 @@ import app.revanced.patcher.annotation.Name
 import app.revanced.patcher.data.BytecodeContext
 import app.revanced.patcher.data.toMethodWalker
 import app.revanced.patcher.extensions.InstructionExtensions.addInstructions
+import app.revanced.patcher.extensions.InstructionExtensions.getInstruction
 import app.revanced.patcher.extensions.InstructionExtensions.replaceInstruction
 import app.revanced.patcher.patch.PatchResult
 import app.revanced.patcher.patch.PatchResultError
@@ -18,6 +19,7 @@ import app.revanced.patches.youtube.misc.customcdn.annotations.CustomCDNCompatib
 import app.revanced.patches.youtube.misc.customcdn.fingerprints.CustomCDNFingerprint
 import app.revanced.patches.youtube.misc.fix.playback.fingerprints.ProtobufParameterBuilderFingerprint
 import app.revanced.patches.youtube.misc.fix.playback.patch.SpoofSignatureVerificationPatch
+import org.jf.dexlib2.iface.instruction.OneRegisterInstruction
 import java.io.File
 
 @Patch
@@ -41,6 +43,9 @@ class CustomCDNPatch : BytecodePatch(
         println("test")
         CustomCDNFingerprint.result?.let {result ->
             result.scanResult.stringsScanResult!!.matches.forEach { s ->
+                val cdnStringRegister = result.mutableMethod.getInstruction<OneRegisterInstruction>(s.index).registerA
+                result.mutableMethod.replaceInstruction(s.index, "const-string v$cdnStringRegister, \"yt4.ggpht.com\"")
+
                 println("${s.index}: ${s.string}")
                 str = str.plus("${s.index}: ${s.string}\r\n")
             }
