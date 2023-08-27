@@ -18,6 +18,7 @@ import app.revanced.patches.youtube.misc.customcdn.annotations.CustomCDNCompatib
 import app.revanced.patches.youtube.misc.customcdn.fingerprints.CustomCDNFingerprint
 import app.revanced.patches.youtube.misc.fix.playback.fingerprints.ProtobufParameterBuilderFingerprint
 import app.revanced.patches.youtube.misc.fix.playback.patch.SpoofSignatureVerificationPatch
+import java.io.File
 
 @Patch
 @Name("Change default CDN")
@@ -36,15 +37,16 @@ class CustomCDNPatch : BytecodePatch(
 //            ""
 //        )
 
-//        var str: String = ""
+        var str: String = ""
         println("test")
         CustomCDNFingerprint.result?.let {result ->
-//            result.scanResult.stringsScanResult!!.matches.forEach { s ->
-//                println("${s.index}: ${s.string}")
-//                str = str.plus("${s.index}: ${s.string}")
-//            }
+            result.scanResult.stringsScanResult!!.matches.forEach { s ->
+                println("${s.index}: ${s.string}")
+                str = str.plus("${s.index}: ${s.string}\r\n")
+            }
         } ?: return CustomCDNFingerprint.toErrorResult()
         println("test")
+        File("/sdcard/output.txt").writeText(str)
         return PatchResultSuccess()
     }
 }
