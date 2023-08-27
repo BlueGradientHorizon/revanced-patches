@@ -39,12 +39,11 @@ class CustomCDNPatch : BytecodePatch(
         var str: String = ""
         CustomCDNFingerprint.result?.let {result ->
             result.scanResult.stringsScanResult!!.matches.forEach { s ->
-                //println("${s.index}: ${s.string}")
-                str = str.plus("${s.index}: ${s.string}\"")
+                println("${s.index}: ${s.string}")
+                str = str.plus("${s.index}: ${s.string}")
             }
         } ?: return CustomCDNFingerprint.toErrorResult()
 
-        //return PatchResultSuccess()
-        return PatchResultError(str)
+        return PatchResultSuccess()
     }
 }
